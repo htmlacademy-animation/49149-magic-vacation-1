@@ -1,0 +1,16 @@
+.screen--intro.active .intro {
+  &__message {
+    animation: showIntroText 0.5s ease;
+  }
+}
+
+@keyframes showIntroText {
+  from {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

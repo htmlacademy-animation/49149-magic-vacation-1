@@ -1,0 +1,22 @@
+.form__field {
+  animation: showFieldRightToLeft 1.5s $t-timingFunction;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.form__button {
+  max-width: 170px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+@keyframes showFieldRightToLeft {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: calc(100% - 21rem);
+  }
+}

@@ -1,0 +1,39 @@
+.social-block__toggler {
+  transition: color $t-duration $t-timingFunction;
+  &::before {
+    transition: all $t-duration $t-timingFunction;
+  }
+}
+
+.social-block__list {
+  transition: opacity 0.2s $t-timingFunction;
+}
+
+.social-block--active {
+  .social-block__link {
+    opacity: 1;
+    transform: translateY(0);
+    &--fb {
+      transition: transform $t-duration $t-timingFunction 0.1s,
+        opacity $t-duration $t-timingFunction 0.1s,
+        color $t-duration $t-timingFunction;
+    }
+    &--insta {
+      transition: transform $t-duration $t-timingFunction $t-duration,
+        opacity $t-duration $t-timingFunction $t-duration,
+        color $t-duration $t-timingFunction;
+    }
+    &--vk {
+      transition: transform $t-duration $t-timingFunction 0.5s,
+        opacity $t-duration $t-timingFunction 0.5s,
+        color $t-duration $t-timingFunction;
+    }
+  }
+}
+
+.social-block__link {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: transform $t-duration $t-timingFunction,
+    opacity $t-duration $t-timingFunction, color $t-duration $t-timingFunction;
+}

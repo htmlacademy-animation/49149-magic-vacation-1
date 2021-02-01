@@ -1,5 +1,36 @@
 .page-header {
+  opacity: 0;
+
+  .load & {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1s $t-cubic;
+  }
+
+  &__logo {
+    transform: translateX(-15%);
+
+    .load & {
+      transform: translateX(0);
+      transition: all 1s $t-cubic;
+    }
+  }
+
   &__menu {
+    opacity: 0;
+
+    .load & {
+      opacity: 1;
+      transition: opacity 1.5s;
+
+      & a.active {
+        &::after {
+          width: 100%;
+          transition: width 1s;
+        }
+      }
+    }
+
     & a {
       &::before {
         content: "";
@@ -16,6 +47,12 @@
         width: 100%;
         right: auto;
         left: 0;
+      }
+    }
+
+    & a.active {
+      &::after {
+        width: 0;
       }
     }
   }

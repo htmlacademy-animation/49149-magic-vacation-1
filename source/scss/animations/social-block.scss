@@ -1,12 +1,27 @@
-.social-block__toggler {
-  transition: color $t-duration $t-timingFunction;
-  &::before {
-    transition: all $t-duration $t-timingFunction;
-  }
-}
+.social-block {
+  &__toggler {
+    transition: color $t-duration $t-timingFunction;
 
-.social-block__list {
-  transition: opacity 0.2s $t-timingFunction;
+    &::before {
+      transition: all $t-duration $t-timingFunction;
+
+      .load & {
+        width: 100%;
+        animation: bgSocialToggler 1s $t-cubic forwards;
+      }
+    }
+  }
+
+  &__list {
+    transition: opacity 0.2s $t-timingFunction;
+  }
+
+  &__link {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: transform $t-duration $t-timingFunction,
+      opacity $t-duration $t-timingFunction, color $t-duration $t-timingFunction;
+  }
 }
 
 .social-block--active {
@@ -31,9 +46,17 @@
   }
 }
 
-.social-block__link {
-  opacity: 0;
-  transform: translateY(2rem);
-  transition: transform $t-duration $t-timingFunction,
-    opacity $t-duration $t-timingFunction, color $t-duration $t-timingFunction;
+@keyframes bgSocialToggler {
+  from {
+    width: 50%;
+    height: 50%;
+  }
+  95% {
+    width: 115%;
+    height: 115%;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+  }
 }

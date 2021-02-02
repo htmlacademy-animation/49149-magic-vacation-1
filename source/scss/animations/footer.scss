@@ -1,0 +1,11 @@
+.screen__footer {
+  opacity: 0;
+  transform: translateY(100%);
+
+  .load & {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition: 0.5s cubic-bezier(0.58, 1.01, 0.68, 1.01);
+  }
+}

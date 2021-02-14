@@ -1,0 +1,23 @@
+.animation-box {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: $c-dark;
+
+  &.active {
+    z-index: 2;
+    height: 100%;
+    animation: showBgBox 1s $t-timingFunction forwards;
+  }
+}
+
+@keyframes showBgBox {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}

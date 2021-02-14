@@ -1,0 +1,99 @@
+.rules {
+  &__item {
+    & p {
+      margin-left: auto;
+      margin-right: 0;
+      opacity: 0;
+      transform: translate3d(10px, 0, 0);
+
+      animation-name: showRulesItemText;
+      animation-duration: 1s;
+      animation-delay: 0.5s;
+      animation-timing-function: $t-cubic;
+      animation-fill-mode: forwards;
+    }
+
+    &::before {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      font-size: 0;
+      transform: scale(0);
+
+      animation-name: showMarker;
+      animation-duration: 1s;
+      animation-timing-function: $t-cubic;
+      animation-fill-mode: forwards;
+    }
+
+    @for $i from 1 to 5 {
+      &:nth-child(#{$i}) {
+        & p {
+          animation-delay: (400ms * $i);
+        }
+
+        &::before {
+          animation-delay: (250ms * $i);
+        }
+      }
+    }
+  }
+
+  &__link.btn {
+    width: 60px;
+    color: transparent;
+
+    animation-name: showRulesBtn;
+    animation-timing-function: $t-cubic;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+
+    &::before {
+      opacity: 0;
+
+      animation-name: showRulesBtnBg;
+      animation-timing-function: $t-cubic;
+      animation-duration: 1s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes showMarker {
+  75% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    transform: scale(1);
+  }
+}
+
+@keyframes showRulesItemText {
+  to {
+    opacity: 1;
+    transform: translate3d(-10px, 0, 0);
+  }
+}
+
+@keyframes showRulesBtnBg {
+  to {
+    opacity: 1;
+    width: 100%;
+    background-color: #fff;
+  }
+}
+
+@keyframes showRulesBtn {
+  to {
+    opacity: 1;
+    width: 165px;
+    color: #5f458c;
+  }
+}

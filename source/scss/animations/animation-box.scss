@@ -7,40 +7,17 @@
   background-color: $c-dark;
 
   &.active {
+    z-index: 2;
     height: 100%;
-    animation: showBgBox 2s $t-timingFunction forwards;
+    animation: showBgBox 1s $t-timingFunction forwards;
   }
-}
-
-.screen--prizes {
-  animation-delay: 2s;
-  animation: showContent 2s $t-cubic forwards;
-}
-
-.prizes {
-  opacity: 0;
-  animation-delay: 2s;
-  animation: showContent 2s $t-cubic forwards;
 }
 
 @keyframes showBgBox {
   from {
-    z-index: 2;
     height: 0;
   }
   to {
-    z-index: 1;
     height: 100%;
-  }
-}
-
-@keyframes showContent {
-  from {
-    opacity: 0;
-    z-index: 0;
-  }
-  to {
-    opacity: 1;
-    z-index: 2;
   }
 }

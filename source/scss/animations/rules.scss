@@ -7,32 +7,34 @@
       transform: translate3d(10px, 0, 0);
 
       animation-name: showRulesItemText;
-      animation-duration: 1s;
-      animation-delay: 0.5s;
+      animation-duration: 0.3s;
+      animation-delay: 0.25s;
       animation-timing-function: $t-cubic;
       animation-fill-mode: forwards;
     }
 
     &::before {
-      width: 0;
-      height: 0;
       opacity: 0;
-      font-size: 0;
+      color: transparent;
       transform: scale(0);
 
       animation-name: showMarker;
-      animation-duration: 1s;
+      animation-duration: 0.25s;
       animation-timing-function: $t-cubic;
       animation-fill-mode: forwards;
+    }
+
+    @for $i from 2 to 5 {
+      &:nth-child(#{$i}) {
+        &::before {
+          animation-delay: (150ms * $i);
+        }
+      }
     }
 
     @for $i from 1 to 5 {
       &:nth-child(#{$i}) {
         & p {
-          animation-delay: (400ms * $i);
-        }
-
-        &::before {
           animation-delay: (250ms * $i);
         }
       }
@@ -45,8 +47,8 @@
 
     animation-name: showRulesBtn;
     animation-timing-function: $t-cubic;
-    animation-duration: 1s;
-    animation-delay: 1.5s;
+    animation-duration: 0.25s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
 
     &::before {
@@ -54,7 +56,7 @@
 
       animation-name: showRulesBtnBg;
       animation-timing-function: $t-cubic;
-      animation-duration: 1s;
+      animation-duration: 0.25s;
       animation-delay: 1s;
       animation-fill-mode: forwards;
     }
@@ -63,22 +65,24 @@
 
 @keyframes showMarker {
   75% {
+    color: transparent;
     opacity: 0.5;
-    transform: scale(1.2);
+    transform: scale(1.15);
   }
   to {
     opacity: 1;
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1.2rem;
+    color: #ffffff;
     transform: scale(1);
   }
 }
 
 @keyframes showRulesItemText {
+  75% {
+    opacity: 0.75;
+  }
   to {
     opacity: 1;
-    transform: translate3d(-10px, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 

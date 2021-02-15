@@ -1126,44 +1126,39 @@ img {
   opacity: 0;
   transform: translate3d(10px, 0, 0);
   animation-name: showRulesItemText;
-  animation-duration: 1s;
-  animation-delay: 0.5s;
+  animation-duration: 0.3s;
+  animation-delay: 0.25s;
   animation-timing-function: cubic-bezier(0.58, 1.01, 0.68, 1.01);
   animation-fill-mode: forwards; }
 
 .rules__item::before {
-  width: 0;
-  height: 0;
   opacity: 0;
-  font-size: 0;
+  color: transparent;
   transform: scale(0);
   animation-name: showMarker;
-  animation-duration: 1s;
+  animation-duration: 0.25s;
   animation-timing-function: cubic-bezier(0.58, 1.01, 0.68, 1.01);
   animation-fill-mode: forwards; }
 
-.rules__item:nth-child(1) p {
-  animation-delay: 400ms; }
+.rules__item:nth-child(2)::before {
+  animation-delay: 300ms; }
 
-.rules__item:nth-child(1)::before {
+.rules__item:nth-child(3)::before {
+  animation-delay: 450ms; }
+
+.rules__item:nth-child(4)::before {
+  animation-delay: 600ms; }
+
+.rules__item:nth-child(1) p {
   animation-delay: 250ms; }
 
 .rules__item:nth-child(2) p {
-  animation-delay: 800ms; }
-
-.rules__item:nth-child(2)::before {
   animation-delay: 500ms; }
 
 .rules__item:nth-child(3) p {
-  animation-delay: 1200ms; }
-
-.rules__item:nth-child(3)::before {
   animation-delay: 750ms; }
 
 .rules__item:nth-child(4) p {
-  animation-delay: 1600ms; }
-
-.rules__item:nth-child(4)::before {
   animation-delay: 1000ms; }
 
 .rules__link.btn {
@@ -1171,32 +1166,33 @@ img {
   color: transparent;
   animation-name: showRulesBtn;
   animation-timing-function: cubic-bezier(0.58, 1.01, 0.68, 1.01);
-  animation-duration: 1s;
-  animation-delay: 1.5s;
+  animation-duration: 0.25s;
+  animation-delay: 1s;
   animation-fill-mode: forwards; }
   .rules__link.btn::before {
     opacity: 0;
     animation-name: showRulesBtnBg;
     animation-timing-function: cubic-bezier(0.58, 1.01, 0.68, 1.01);
-    animation-duration: 1s;
+    animation-duration: 0.25s;
     animation-delay: 1s;
     animation-fill-mode: forwards; }
 
 @keyframes showMarker {
   75% {
+    color: transparent;
     opacity: 0.5;
-    transform: scale(1.2); }
+    transform: scale(1.15); }
   to {
     opacity: 1;
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1.2rem;
+    color: #ffffff;
     transform: scale(1); } }
 
 @keyframes showRulesItemText {
+  75% {
+    opacity: 0.75; }
   to {
     opacity: 1;
-    transform: translate3d(-10px, 0, 0); } }
+    transform: translate3d(0, 0, 0); } }
 
 @keyframes showRulesBtnBg {
   to {
